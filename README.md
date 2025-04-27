@@ -24,4 +24,4 @@
 
 ---
 
-> Memoire was developed as a capstone project for the Encode EVM Bootcamp, showcasing applied use of decentralized technologies for private, timed content distribution.
+>Memoire A Time Capusle is an extention of the Memoire-G7 which we developed as part of group 7  as a capstone project for the Encode EVM Bootcamp, showcasing applied use of decentralized technologies for private, timed content distribution.
