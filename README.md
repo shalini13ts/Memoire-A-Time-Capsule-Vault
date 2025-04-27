@@ -7,7 +7,6 @@
 - **Time-Locked Submissions** – Users upload content and define a future unlock date. Files are encrypted and stored on IPFS, remaining inaccessible until the specified time.
 - **Decentralized Storage (IPFS)** – Media is stored on a distributed, verifiable network using immutable content identifiers (CIDs).
 - **Smart Contract Access Control** – On-chain logic registers ownership and verifies whether a file can be unlocked, based on the wallet and timestamp.
-- **Randamu Integration** – Delivers tamper-proof, verifiable encryption and unlock conditions using decentralized randomness.
 - **Secure Retrieval Flow** – When the unlock date is met, users can decrypt and access their original files directly from IPFS.
 
 ## 🛠️ Tech Stack
