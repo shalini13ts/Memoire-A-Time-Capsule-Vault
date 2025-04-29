@@ -16,34 +16,6 @@ export class VaultService {
     };
   }
 
-  async streamFilesFromTx(txHash: string, res: Response) {
-    const cids = await this.blockchainService.getVaultFilesFromTx(txHash as `0x${string}`);
-
-    if (!cids.length) {
-      throw new NotFoundException('No files found in this vault.');
-    }
-
-    res.setHeader('Content-Type', 'application/zip');
-    res.setHeader('Content-Disposition', `attachment; filename="vault-files.zip"`);
-
-    const archive = archiver('zip', { zlib: { level: 9 } });
-    archive.pipe(res);
-
-    for (let i = 0; i < cids.length; i++) {
-      const cid = cids[i];
-      try {
-        const fileResponse = await axios.get(`https://gateway.pinata.cloud/ipfs/${cid}`, {
-          responseType: 'stream',
-        });
-        archive.append(fileResponse.data, { name: `file-${i + 1}` });
-      } catch (err) {
-        console.warn(`Failed to retrieve CID ${cid}: ${err}`);
-      }
-    }
-
-    await archive.finalize();
-  }
-
   async getRetrieveTxRequest(vaultId: string) {
     return this.blockchainService.createRetrieveVaultTxRequest(vaultId as `0x${string}`);
   }
