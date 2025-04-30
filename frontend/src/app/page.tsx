@@ -18,8 +18,18 @@ export default function Home() {
           <p className="mt-5 max-w-xl mx-auto text-xl text-gray-600">
             Preserve your memories securely on the blockchain
           </p>
+          {/* Add this link to navigate to images page */}
+          <div className="mt-6">
+            <Link 
+              href="/images"
+              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700"
+            >
+              Click here if you have a vault 
+            </Link>
+          </div>
         </header>
 
+        {/* Rest of your existing code remains the same */}
         {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Left Column - Forms */}
@@ -37,11 +47,7 @@ export default function Home() {
                 <TimeCapsuleForm />
               </div>
 
-              {/* Vault Retrieval Form Card */}
-              <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100">
-                <h2 className="text-2xl font-bold text-gray-800 mb-4">Retrieve Your Vault</h2>
-                <VaultRetrievalForm />
-              </div>
+              
             </div>
           </div>
 
@@ -54,8 +60,6 @@ export default function Home() {
               </span>
             </div>
             <UserVaultsList />
-            
-            
           </div>
         </div>
 
